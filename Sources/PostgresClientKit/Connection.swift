@@ -1183,6 +1183,7 @@ public class Connection: CustomStringConvertible {
                     // This issue results in socket.read(...) returning 0 even though the
                     // socket is supposedly "blocking".
                     Thread.sleep(forTimeInterval: 0.01) // 10 ms
+                    log(.info, "Issue #26: slept for 10 ms after socket read returned 0")
                 }
             } catch {
                 log(.warning, "Error receiving response: \(error)")
